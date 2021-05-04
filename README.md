@@ -9,7 +9,7 @@ For a quick **TL;DR**, you can skip below.
 
 #### Clone the repository
 ```bash
-git clone git@gitlab.com:ui-clients/saindex.git <projectname>
+git clone https://github.com/immeasurableamit/acropolis.git <projectname>
 ```
 
 #### Switch to the repo folder
@@ -47,7 +47,7 @@ You can now access the server at [localhost](http://127.0.0.1:8000).
 
 **TL;DR**
 ```bash
-git clone git@gitlab.com:ui-clients/taps.git <projectname>
+git clone https://github.com/immeasurableamit/acropolis.git <projectname>
 
 cd <projectname>
 
@@ -68,7 +68,7 @@ php artisan serve
 
 **Populate the database with seed data & relationships.**
 
-To verify the *Administrator* password check the ``UserSeeder`` file.
+To verify the *Administrator* password check the ``UsersTableSeeder`` file.
 
 #### Run the database seeder
 ```bash
