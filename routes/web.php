@@ -22,8 +22,29 @@ Route::view('/', 'welcome');
     Route::get('/login/admin', 'Auth\LoginController@showAdminLoginForm');
     Route::get('/register/admin', 'Auth\RegisterController@showAdminRegisterForm');
 
-    Route::post('/login/admin', 'Auth\LoginController@adminLogin');
+    Route::post('/login/admin', 'Auth\LoginController@adminLogin')->name('login.admin');
     Route::post('/register/admin', 'Auth\RegisterController@createAdmin');
 
     Route::view('/home', 'home')->middleware('auth');
+
+
     Route::view('/admin', 'admin');
+
+
+
+
+    Route::group(['middleware' => ['web','auth:admin'], 'prefix' => 'admin'], function() {
+        Route::get('user/register', 'UserRegistrationController@index')->name('register');
+        Route::post('/register', 'UserRegistrationController@createUser')->name('user.register');
+        Route::get('user/list', 'UserRegistrationController@showUsers')->name('users.list');
+
+        Route::get('user/details/{id}', 'UserRegistrationController@userDetails');
+        Route::get('user/edit/{id}', 'UserRegistrationController@editUsers');
+
+        Route::post('user/edit/{id}', 'UserRegistrationController@editUpadte')->name('user.edit');
+
+        Route::delete('/user/delete/{id}', 'UserRegistrationController@destroy');
+
+
+
+      });
