@@ -82,18 +82,4 @@ To make them accessible from the web, create a symbolic link from `public/storag
 ```bash
 php artisan storage:link
 ```
-
-## Node.js packages
-You will need `node` and `npm` installed globally on your machine.
-
-#### Install the dependencies
-```bash
-npm i
-```
-
-#### Compile the assets
-```bash
-npm run dev
-```
-
 ----------
